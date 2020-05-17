@@ -27,8 +27,8 @@ resource "azurerm_policy_definition" "policy" {
         "details": {
           "type": "Microsoft.Storage/storageAccounts/privateEndpointConnections",
           "existenceCondition": {
-            "field": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateLinkServiceConnectionState.status",
-            "equals": "Approved"
+            "field": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateLinkServiceConnectionState",
+            "exists": "true"
           }
         }
       }
