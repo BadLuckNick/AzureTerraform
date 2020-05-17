@@ -17,7 +17,7 @@ resource "azurerm_policy_definition" "storagepolicy" {
   METADATA
 
   policy_rule = <<POLICY_RULE
-
+    {
       "if": {
         "field": "type",
         "equals": "Microsoft.Storage/storageAccounts"
