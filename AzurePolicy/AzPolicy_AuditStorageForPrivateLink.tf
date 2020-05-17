@@ -12,7 +12,7 @@ resource "azurerm_policy_definition" "storagepolicy" {
 
   metadata     = <<METADATA
     {
-    "category": "Demo"
+    "category": "PrivateLink"
     }
   METADATA
 
