@@ -1,3 +1,6 @@
+##This currently only audits for the existense of the Private Link Field. Testing has provided that working with .status doesn't work.
+##I suspect this has something to do with Private Link attaching to a specific Storage service (i.e. Blob, Tables etc) and not at the account level.
+
 # Configure the Microsoft Azure Provider.
 provider "azurerm" {
     version = "=1.30.0"
