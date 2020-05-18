@@ -7,11 +7,11 @@ provider "azurerm" {
 }
 
 # Define Azure Policy Definition
-resource "azurerm_policy_definition" "storagepolicy" {
+resource "azurerm_policy_definition" "storagepolicy2" {
   name         = "StorageAccount-PrivateLink"
   policy_type  = "Custom"
   mode         = "Indexed"
-  display_name = "Audit storage accounts for Private Link"
+  display_name = "Audit storage accounts for Private Link 3"
 
   metadata     = <<METADATA
     {
@@ -30,8 +30,8 @@ resource "azurerm_policy_definition" "storagepolicy" {
         "details": {
           "type": "Microsoft.Storage/storageAccounts/privateEndpointConnections",
           "existenceCondition": {
-            "field": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateLinkServiceConnectionState",
-            "exists": "true"
+            "field": "Microsoft.Storage/storageAccounts/privateEndpointConnections/privateLinkServiceConnectionState.status",
+            "equals": "Approved"
           }
         }
       }
