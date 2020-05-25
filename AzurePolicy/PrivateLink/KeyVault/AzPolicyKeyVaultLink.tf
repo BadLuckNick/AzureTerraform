@@ -1,7 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
 resource "azurerm_policy_definition" "keyvaultprivatelink" {
   name         = "${var.prefix}KeyVault-PrivateLink"
   policy_type  = "Custom"

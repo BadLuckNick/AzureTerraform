@@ -1,12 +1,12 @@
 resource "azurerm_policy_definition" "storageprivatelink" {
-  name         = "StorageAccount-PrivateLink"
+  name         = "${var.prefix}StorageAccount-PrivateLink"
   policy_type  = "Custom"
   mode         = "Indexed"
-  display_name = "Audit storage accounts for Private Link"
+  display_name = "${var.prefix}Audit storage accounts for Private Link"
 
   metadata     = <<METADATA
     {
-    "category": "PrivateLink"
+    "category": "${var.category}"
     }
   METADATA
 

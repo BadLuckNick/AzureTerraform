@@ -1,12 +1,12 @@
 resource "azurerm_policy_definition" "Sqlprivatelink" {
-  name         = "Sql-PrivateLink"
+  name         = "${var.prefix}Sql-PrivateLink"
   policy_type  = "Custom"
   mode         = "Indexed"
-  display_name = "Audit Sql for Private Link usage"
+  display_name = "${var.prefix}Audit Sql for Private Link usage"
 
   metadata     = <<METADATA
     {
-    "category": "PrivateLink"
+    "category": "${var.category}"
     }
   METADATA
 

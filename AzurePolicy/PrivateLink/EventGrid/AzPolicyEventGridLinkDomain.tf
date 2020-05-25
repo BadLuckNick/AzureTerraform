@@ -1,12 +1,12 @@
 resource "azurerm_policy_definition" "eventgriddomainprivatelink" {
-  name         = "EventGrid-domain-PrivateLink"
+  name         = "${var.prefix}EventGrid-domain-PrivateLink"
   policy_type  = "Custom"
   mode         = "Indexed"
-  display_name = "Audit Event Grid Domains for Private Link"
+  display_name = "${var.prefix}Audit Event Grid Domains for Private Link"
 
   metadata     = <<METADATA
     {
-    "category": "PrivateLink"
+    "category": "${var.category}"
     }
   METADATA
 
