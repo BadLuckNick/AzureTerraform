@@ -1,13 +1,16 @@
+provider "azurerm" {
+  features {}
+}
 
 resource "azurerm_policy_definition" "keyvaultprivatelink" {
-  name         = "KeyVault-PrivateLink"
+  name         = "${var.prefix}KeyVault-PrivateLink"
   policy_type  = "Custom"
   mode         = "Indexed"
-  display_name = "Audit KeyVault for Private Link usage"
+  display_name = "${var.prefix}Audit KeyVault for Private Link usage"
 
   metadata     = <<METADATA
     {
-    "category": "PrivateLink"
+    "category": "${var.category}"
     }
   METADATA
 
